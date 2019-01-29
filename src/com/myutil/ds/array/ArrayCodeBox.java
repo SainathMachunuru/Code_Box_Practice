@@ -20,12 +20,36 @@ public class ArrayCodeBox {
 	 * to n. There are no duplicates in list. One of the integers is missing in the
 	 * list.This method will find missing element in the list
 	 */
-	public int getMisssingNumber(int arr[],int n) {
-		int sum=(n+1)*(n+2)/2;
-		for(int i=0;i<arr.length;i++) {
-			sum-=arr[i];
+	public int getMisssingNumber(int arr[], int n) {
+		int sum = (n + 1) * (n + 2) / 2;
+		for (int i = 0; i < arr.length; i++) {
+			sum -= arr[i];
 		}
 		return sum;
+	}
+
+	public int findSubArrayWithGivenSum(int arr[], int sum) {
+		int currentSum = arr[0], start = 0;
+		for (int i = 1; i <= arr.length; i++) {
+			while (currentSum > sum && start < i - 1) {
+				currentSum -= arr[start];
+				start++;
+
+			}
+			if (currentSum == sum) {
+				int endIndex = i - 1;
+				System.out.println("Sum found between indexes: " + start + " and " + endIndex);
+				return 1;
+			}
+			if (i < arr.length) {
+				currentSum += arr[i];
+
+			}
+			
+		}
+		System.out.println("No sub array found with given sum");
+		return 0;
+
 	}
 
 }
