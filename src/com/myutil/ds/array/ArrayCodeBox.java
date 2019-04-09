@@ -51,5 +51,31 @@ public class ArrayCodeBox {
 		return 0;
 
 	}
+	public int[][] roatateMatrixBy90Degree(int[][] arr){
+		for(int i=0;i<arr.length;i++) {
+			for(int j=0;j<arr.length;j++) {
+				arr = swapPositins(arr,i,j);
+			}
+		}
+		for(int i=0;i<arr.length;i++) {
+			for(int j=0;j<arr.length;j++) {
+				System.out.print(arr[i][j]);
+			}
+			System.out.println();
+		}
+		return arr;
+	}
+
+	private int[][] swapPositins(int arr[][],int i, int j) {
+		int temp = arr[i][j];
+		arr[i][j]=arr[j][i];
+		arr[j][i]=temp;
+		if(i==0 && j==2) {
+			System.out.println(arr[i][j]+" "+arr[j][i]);
+		}
+		
+		return arr;
+		
+	}
 
 }
