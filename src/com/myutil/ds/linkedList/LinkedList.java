@@ -69,5 +69,55 @@ public class LinkedList {
 		 */
 
 	}
+	 public Node mergeTwoLists(Node A, Node B) {
+	        Node temp = null;
+	        Node tempHead = null;
+	        while(A!=null && B!=null){
+	            if(A.data<=B.data){
+	                if(temp == null){
+	                
+	                    temp = A;
+	                    tempHead = A;
+	                }
+	                else{
+	                    temp.next = A;
+	                    
+	                    temp = temp.next;
+	                }
+	                A = A.next;
+	            }
+	            else{
+	                if(temp == null){
+	                
+	                    temp = B;
+	                    tempHead = B;
+	                }
+	                else{
+	                    temp.next = B;
+	                    temp = temp.next;
+	                }
+	                B =B.next;
+	            }
+	            
+	        }
+	       /* while(A!=null){
+	            temp.next = A;
+	            A=A.next;
+	            
+	        }*/
+	        if(A!=null)
+	        temp.next = A;
+	       /* while(B!=null){
+	            temp.next = B;
+	            B=B.next;
+	            
+	        }*/
+	        if(B!=null)
+	        temp.next = B;
+	        head = tempHead;
+	        printLinkedList();
+	        return temp;
+	       
+	    }
 
 }
