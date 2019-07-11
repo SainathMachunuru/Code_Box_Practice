@@ -69,55 +69,105 @@ public class LinkedList {
 		 */
 
 	}
-	 public Node mergeTwoLists(Node A, Node B) {
-	        Node temp = null;
-	        Node tempHead = null;
-	        while(A!=null && B!=null){
-	            if(A.data<=B.data){
-	                if(temp == null){
-	                
-	                    temp = A;
-	                    tempHead = A;
-	                }
-	                else{
-	                    temp.next = A;
-	                    
-	                    temp = temp.next;
-	                }
-	                A = A.next;
-	            }
-	            else{
-	                if(temp == null){
-	                
-	                    temp = B;
-	                    tempHead = B;
-	                }
-	                else{
-	                    temp.next = B;
-	                    temp = temp.next;
-	                }
-	                B =B.next;
-	            }
-	            
-	        }
-	       /* while(A!=null){
-	            temp.next = A;
-	            A=A.next;
-	            
-	        }*/
-	        if(A!=null)
-	        temp.next = A;
-	       /* while(B!=null){
-	            temp.next = B;
-	            B=B.next;
-	            
-	        }*/
-	        if(B!=null)
-	        temp.next = B;
-	        head = tempHead;
-	        printLinkedList();
-	        return temp;
-	       
-	    }
+
+	public Node mergeTwoLists(Node A, Node B) {
+		Node temp = null;
+		Node tempHead = null;
+		while (A != null && B != null) {
+			if (A.data <= B.data) {
+				if (temp == null) {
+
+					temp = A;
+					tempHead = A;
+				} else {
+					temp.next = A;
+
+					temp = temp.next;
+				}
+				A = A.next;
+			} else {
+				if (temp == null) {
+
+					temp = B;
+					tempHead = B;
+				} else {
+					temp.next = B;
+					temp = temp.next;
+				}
+				B = B.next;
+			}
+
+		}
+		/*
+		 * while(A!=null){ temp.next = A; A=A.next;
+		 * 
+		 * }
+		 */
+		if (A != null)
+			temp.next = A;
+		/*
+		 * while(B!=null){ temp.next = B; B=B.next;
+		 * 
+		 * }
+		 */
+		if (B != null)
+			temp.next = B;
+		head = tempHead;
+		printLinkedList();
+		return temp;
+
+	}
+
+	public void insertElementAtStart(LinkedList ls, int data) {
+		Node newNode = new Node(data);
+		newNode.next = ls.head;
+		ls.head = newNode;
+
+	}
+
+	public void insertElementAtLast(LinkedList ls, int data) {
+		Node tempnode = ls.head;
+		Node newNode = new Node(data);
+		while (tempnode.next != null) {
+			tempnode = tempnode.next;
+		}
+		tempnode.next = newNode;
+
+	}
+
+	public void insertAtSpecificPos(LinkedList ls, int data, int prevNodeVal) {
+		Node newNode = new Node(data);
+		Node prevNode = ls.head;
+		while (prevNode != null) {
+			if (prevNode.data == prevNodeVal) {
+				newNode.next = prevNode.next;
+				prevNode.next = newNode;
+			}
+			prevNode = prevNode.next;
+		}
+	}
+
+	public void deleteAtSpecificPos(LinkedList ls, int pos) {
+		Node currentNode = ls.head;
+		if (pos == 0) {
+			ls.head = currentNode.next;
+		}
+		for (int i = 0; currentNode != null && i < pos - 1; i++) {
+			currentNode = currentNode.next;
+
+		}
+
+		currentNode.next = currentNode.next.next;
+
+	}
+	public void printLinkedListReverse(Node head) {
+		if(head == null) {
+			return;
+		}
+		printLinkedListReverse(head.next);
+		System.out.print(head.data+" ");
+		System.out.println();
+		
+	}
 
 }

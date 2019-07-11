@@ -17,15 +17,25 @@ public class LinkedListMainTest {
 		linkedList.rotateLinkedList(linkedList.head, 2);*/
 		LinkedList l1 = new LinkedList();
 		LinkedList l2 = new LinkedList();
+		l2.push(4);
 		l2.push(3);
 		l2.push(2);
 		l2.push(1);
+		//linkedList.insertElementAtStart(l2, 4);
+		//linkedList.insertElementAtLast(l2,4);
+		//linkedList.insertAtSpecificPos(l2, 8, 2);
+		//linkedList.deleteAtSpecificPos(l2, 2);
+		l2.printLinkedList();
+		linkedList.printLinkedListReverse(l2.head);
+		
+		
+		//System.out.println(l2.head.data);
 		
 		l1.push(6);
 		l1.push(5);
 		l1.push(4);
 		
-		new LinkedList().mergeTwoLists(l1.head, l2.head);
+		//new LinkedList().mergeTwoLists(l1.head, l2.head);
 	}
 
 }
