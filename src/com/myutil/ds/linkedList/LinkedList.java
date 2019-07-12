@@ -3,10 +3,27 @@ package com.myutil.ds.linkedList;
 public class LinkedList {
 	Node head = null;
 
+	// Inserts a new Node at front of the list
 	public void push(int newData) {
 		Node newNode = new Node(newData);
 		newNode.next = head;
 		head = newNode;
+	}
+
+	// Appends a new node at the end
+	public void append(int new_data) {
+		Node new_node = new Node(new_data);
+		if (head == null) {
+			head = new Node(new_data);
+			return;
+		}
+		new_node.next = null;
+		Node last = head;
+		while (last.next != null) {
+			last = last.next;
+		}
+		last.next = new_node;
+		return;
 	}
 
 	public void printLinkedList() {
@@ -17,6 +34,16 @@ public class LinkedList {
 
 		}
 		System.out.println("NULL");
+
+	}
+
+	public void printLinkedListReverse(Node head) {
+		if (head == null) {
+			return;
+		}
+		printLinkedListReverse(head.next);
+		System.out.print(head.data + " ");
+		System.out.println();
 
 	}
 
@@ -31,8 +58,8 @@ public class LinkedList {
 		return slowPointer.data;
 	}
 
-	public Node reverseLinkedList(Node node) {
-		Node current = node;
+	public Node reverseLinkedList(Node head) {
+		Node current = head;
 		Node prev = null, next = null;
 		while (current != null) {
 			next = current.next;
@@ -40,8 +67,25 @@ public class LinkedList {
 			prev = current;
 			current = next;
 		}
-		node = prev;
-		return node;
+		head = prev;
+		return head;
+
+	}
+
+	public Node reverseLinkedListUsingRecursion(LinkedList ls, Node head) {
+		Node current = head;
+		if (current.next == null) {
+			ls.head = current;
+			return null;
+
+		}
+		reverseLinkedListUsingRecursion(ls, current.next);
+		Node temp = null;
+		temp = current.next;
+		temp.next = current;
+		current.next = null;
+
+		return ls.head;
 
 	}
 
@@ -159,15 +203,6 @@ public class LinkedList {
 
 		currentNode.next = currentNode.next.next;
 
-	}
-	public void printLinkedListReverse(Node head) {
-		if(head == null) {
-			return;
-		}
-		printLinkedListReverse(head.next);
-		System.out.print(head.data+" ");
-		System.out.println();
-		
 	}
 
 }
