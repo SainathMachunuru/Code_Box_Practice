@@ -1,6 +1,6 @@
 package com.myutil.ds.stack;
 
-public class StackMain {
+public class StackArrayMain {
 
 	public static void main(String[] args) {
 

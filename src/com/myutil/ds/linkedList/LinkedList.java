@@ -1,7 +1,7 @@
 package com.myutil.ds.linkedList;
 
 public class LinkedList {
-	Node head = null;
+	public Node head = null;
 
 	// Inserts a new Node at front of the list
 	public void push(int newData) {

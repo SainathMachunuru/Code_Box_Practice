@@ -1,8 +1,8 @@
-package com.myutil.ds.linkedList;
+package com.myutil.ds.stack;
 
 public class Node {
-	public int data;
-	public Node next;
+	int data;
+	Node next;
 
 	public Node(int data) {
 		this.data = data;
