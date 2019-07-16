@@ -1,4 +1,4 @@
-package com.myutil.hashing;
+package com.myutil.ds.hashing;
 
 public class HashMainTest {
 	public static void main(String args[]) {

@@ -1,4 +1,4 @@
-package com.myutil.hashing;
+package com.myutil.ds.hashing;
 
 import java.util.Map.Entry;
 import java.util.TreeMap;
