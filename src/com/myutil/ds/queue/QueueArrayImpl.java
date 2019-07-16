@@ -1,4 +1,4 @@
-package com.myutil.queue;
+package com.myutil.ds.queue;
 
 public class QueueArrayImpl {
 	private int front = -1, rear = -1;
