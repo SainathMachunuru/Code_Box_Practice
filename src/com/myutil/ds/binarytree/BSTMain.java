@@ -4,18 +4,27 @@ public class BSTMain {
 
 	public static void main(String[] args) {
 		BST bst = new BST();
-		Node node = null;
+		Node node = bst.root;
 		node = bst.insert(node,6);
 		node = bst.insert(node,3);
 		node = bst.insert(node,7);
-		bst.insert(node,1);
-		bst.insert(node,2);
-		bst.insert(node,8);
-		bst.insert(node,9);
-		System.out.println(node.left.data);
-
+		node =bst.insert(node,1);
+		node =bst.insert(node,2);
+		node = bst.insert(node,8);
+		node = bst.insert(node,9);
 		
-		//bst.prinTree(bst.root);
+		int searchElement = 7;
+		
+		System.out.println("**********Elements of BST :: INORDER**********");
+		bst.prinTree(node);
+		System.out.println("**********************************************");
+		
+		System.out.println("**********Serching for element "+searchElement+" . . . . .");
+		System.out.println(bst.search(node, 5)==true?"Element Found":"Element not found");
+		System.out.println("*********************************************************");
+		
+		
+		
 
 	}
 
