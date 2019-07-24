@@ -30,17 +30,23 @@ public class LinkedListMainTest {
 		//linkedList.insertElementAtLast(l2,4);
 		//linkedList.insertAtSpecificPos(l2, 8, 2);
 		//linkedList.deleteAtSpecificPos(l2, 2);
-		l2.printLinkedList();
+		//l2.printLinkedList();
 		//linkedList.printLinkedListReverse(l2.head);
 		//linkedList.reverseLinkedListUsingRecursion(l2,l2.head);
 		//l2.printLinkedList();
+		l2.head  = linkedList.swapPairs(l2.head);
+		l2.printLinkedList();
+		
+		//l2.printLinkedList();
+		
+		
 		
 		
 		//System.out.println(l2.head.data);
 		
-		l1.push(6);
+		/*l1.push(6);
 		l1.push(5);
-		l1.push(4);
+		l1.push(4);*/
 		
 		//new LinkedList().mergeTwoLists(l1.head, l2.head);
 	}
