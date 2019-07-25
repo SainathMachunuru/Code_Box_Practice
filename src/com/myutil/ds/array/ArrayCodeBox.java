@@ -1,5 +1,7 @@
 package com.myutil.ds.array;
 
+import java.util.ArrayList;
+
 public class ArrayCodeBox {
 	public int contiguousSubArrayWithMaximumSum(int arr[]) {
 		int max_so_far = 0, max_end_here = 0;
@@ -77,5 +79,64 @@ public class ArrayCodeBox {
 		return arr;
 		
 	}
+	//two pointers
+	public void sortColors(ArrayList<Integer> a) {
+		int[] arr = new int[a.size()];
+		int zeroCount = 0;
+		int oneCount = 0;
+		int twoCount = 0;
+		for(int i=0;i<a.size();i++) {
+			if(a.get(i) == 0) {
+				zeroCount++;
+			}
+			else if(a.get(i) == 1) {
+				oneCount++;
+			}
+			else {
+				twoCount++;
+			}
+			arr[i] = a.get(i);
+			
+		}
+		int i=0;
+		while(i<a.size()) {
+			if(i<zeroCount) {
+				arr[i]  = 0;
+			}
+			else if(i>=zeroCount && i<(zeroCount+oneCount) ){
+				arr[i]  = 1;
+			}
+			else {
+				arr[i]  = 2;
+			}
+			i++;
+			
+		}
+		for(int j=0;j<a.size();j++) {
+			System.out.println(arr[j]);
+			
+			
+		}
+    }
+	/**
+	 * 
+	 * @param a
+	 * @param b
+	 * @return
+	 * Given a sorted array and a target value, return the index if the target is found. 
+	 * If not, return the index where it would be if it were inserted in order
+	 */
+	 public int searchInsert(ArrayList<Integer> a, int b) {
+         int low =0,high = a.size()-1;
+        if(a.get(low)>b) return low;
+        if(a.get(high)<b) return high+1;
+        while(low<=high){
+            int mid = low +(high-low)/2;
+            if(a.get(mid)== b) return mid;
+            if(a.get(mid)<b) low = mid+1;
+            else high = mid-1;
+        }
+        return low;
+    }
 
 }

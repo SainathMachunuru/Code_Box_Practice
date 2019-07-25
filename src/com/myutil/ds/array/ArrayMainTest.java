@@ -1,5 +1,6 @@
 package com.myutil.ds.array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArrayMainTest {
@@ -14,8 +15,29 @@ public class ArrayMainTest {
 		int arr[][]= {{1,2,3},{4,5,6,},{7,8,9}};
 		
 		//int subArrayWithGivenSum = new ArrayCodeBox().findSubArrayWithGivenSum(new int[] {15,6,3,1,8},10);
-		arr = new ArrayCodeBox().roatateMatrixBy90Degree(arr);
+		ArrayList<Integer> temp = new ArrayList<Integer>();
+		/*temp.add(2);
+		temp.add(1);
+		temp.add(2);
+		temp.add(0);
+		temp.add(0);
+		temp.add(2);
+		temp.add(0);
+		temp.add(1);
+		temp.add(2);
+		temp.add(0);
+		temp.add(1);
+		temp.add(2);*/
+		temp.add(1);
+		temp.add(3);
+		temp.add(5);
+		temp.add(6);
+		System.out.println(new ArrayCodeBox().searchInsert(temp,7));
+		
+		//new ArrayCodeBox().sortColors(temp);
+		//arr = new ArrayCodeBox().roatateMatrixBy90Degree(arr);
 		//System.out.println(Arrays.toString(arr));
+		
 
 	}
 
