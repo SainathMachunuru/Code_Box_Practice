@@ -12,7 +12,7 @@ public class ArrayMainTest {
 
 		int missingElement = new ArrayCodeBox().getMisssingNumber(new int[] { 1, 2, 3, 5, 6 }, 5);
 		System.out.println("missingElement: " + missingElement);*/
-		int arr[][]= {{1,2,3},{4,5,6,},{7,8,9}};
+		//int arr[][]= {{1,2,3},{4,5,6,},{7,8,9}};
 		
 		//int subArrayWithGivenSum = new ArrayCodeBox().findSubArrayWithGivenSum(new int[] {15,6,3,1,8},10);
 		ArrayList<Integer> temp = new ArrayList<Integer>();
@@ -32,7 +32,10 @@ public class ArrayMainTest {
 		temp.add(3);
 		temp.add(5);
 		temp.add(6);
-		System.out.println(new ArrayCodeBox().searchInsert(temp,7));
+		int arr[] = {8,1,7,2,3,4};
+		new ArrayCodeBox().findTwoMissingNumberInUnsortedArray(arr);
+		//System.out.println(Arrays.toString(new ArrayCodeBox().rotateArray(arr, 2)));
+		//System.out.println(new ArrayCodeBox().searchInsert(temp,7));
 		
 		//new ArrayCodeBox().sortColors(temp);
 		//arr = new ArrayCodeBox().roatateMatrixBy90Degree(arr);

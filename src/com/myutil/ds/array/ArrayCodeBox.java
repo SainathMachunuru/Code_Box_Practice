@@ -1,6 +1,9 @@
 package com.myutil.ds.array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class ArrayCodeBox {
 	public int contiguousSubArrayWithMaximumSum(int arr[]) {
@@ -138,5 +141,38 @@ public class ArrayCodeBox {
         }
         return low;
     }
+
+	public int[] rotateArray(int[] arr, int k) {
+		for (int i = 0; i < k; i++) {
+			int temp = arr[0];
+			for (int j = 1; j < arr.length; j++) {
+				arr[j - 1] = arr[j];
+
+			}
+			arr[arr.length - 1] = temp;
+
+		}
+
+		return arr;
+
+	}
+
+	public void findTwoMissingNumberInUnsortedArray(int arr[]) {
+		// Arrays.sort(arr);
+		int size = arr.length + 2;
+		boolean[] temp = new boolean[size + 1];
+
+		for (int i = 0; i < arr.length; i++) {
+			temp[arr[i]] = true;
+		}
+		for (int i = 1; i <= size; i++) {
+			if (!temp[i]) {
+				System.out.println(i);
+
+			}
+
+		}
+
+	}
 
 }
