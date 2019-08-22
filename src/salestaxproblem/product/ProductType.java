@@ -1,4 +1,4 @@
-package SalesTaxProblem;
+package salestaxproblem.product;
 
 public enum ProductType {
 	BOOK(true,false),

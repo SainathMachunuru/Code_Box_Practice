@@ -1,9 +1,9 @@
-package SalesTaxProblem;
+package salestaxproblem.product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductCart {
+public class ProductCart implements ProductCartDef {
 	private List<Product> products = null;
 
 	public ProductCart() {

@@ -1,13 +1,19 @@
-package SalesTaxProblem;
+package salestaxproblem.product;
 
-public class Product {
+import salestaxproblem.taxcalculator.TaxCalculator;
+import salestaxproblem.util.Util;
+
+public class Product implements ProductDef {
 	private String productName;
 	private double price;
 	private ProductType productType;
 	private TaxCalculator taxCalculator = new TaxCalculator();
 
+	public Product() {
+
+	}
+
 	public Product(String productName, double price, ProductType productType) {
-		super();
 		this.productName = productName;
 		this.price = price;
 		this.productType = productType;
@@ -41,8 +47,10 @@ public class Product {
 		return this.getBasicTax() + this.getImportedTax();
 
 	}
+
 	public double getProductPriceWithTax() {
-		return this.price+this.getBasicTax() + this.getImportedTax();
+		
+		return Util.roudingByTwoDecimals(this.price + this.getBasicTax() + this.getImportedTax());
 
 	}
 
