@@ -92,7 +92,7 @@ public class MineFiled {
 						return false;
 						
 					}
-					else if (!MINE_FILED[i][j].isFlaged) {
+					else if (!MINE_FILED[i][j].isFlaged && MINE_FILED[i][j].val == 'x') {
 						return false;
 						
 					}

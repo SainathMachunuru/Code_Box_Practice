@@ -1,6 +1,5 @@
 package minesweeper;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 import minesweeper.acitivities.MineActivity;
@@ -15,17 +14,6 @@ public class MineSweeperMain {
 	public static void main(String[] args) {
 		
 		mineFiled.loadInitialMindeFiled();
-		/*String str = "o(1,2)";
-		MineActivity ob = new StringParser().parseUserInput(str);
-		System.out.println(ob.toString());
-		mineFiled.displayGrid();
-		MineActivity ob = new MineActivity(0,1,'o');
-		mineFiled.open(2,1);
-		mineFiled.flag(0,0);
-		mineFiled.displayGrid();*/
-		
-		
-		
 		run();
 	}
 	public static void run() {
@@ -36,29 +24,19 @@ public class MineSweeperMain {
 			System.out.println("Enter your action[eg: o(1,1)/f(0,2))");
 			input = sc.next();
 			MineActivity mineActivity = parser.parseUserInput(input);
-			if(mineActivity.getActivity() == 'o'){
-				Square mindeSqure = mineFiled.open(mineActivity.getGridRowIndex(),mineActivity.getGridColumnndex());
-				mineFiled.displayGrid();
-				if(mindeSqure.isMined){
-					System.out.println("Oops! You stepped on a mine! Game over! ");
-					break;	
-					
-				}
-				if(mineFiled.checkForWin()){
-					System.out.println("Wow! You cleared the minefield! Game over!  ");
-					break;
-					
-				}
+			if(mineActivity == null) {
+				System.out.println("Invalid Input.Please enter agian...");
 				
 			}
-			else if(mineActivity.getActivity() == 'f'){
-				if(mineFiled.isOpened(mineActivity.getGridRowIndex(),mineActivity.getGridColumnndex())){
-					System.out.println("It is already opened... please select other to proceed ");
-					
-				}
-				else{
-					mineFiled.flag(mineActivity.getGridRowIndex(),mineActivity.getGridColumnndex());
+			else {
+				if(mineActivity.getActivity() == 'o'){
+					Square mindeSqure = mineFiled.open(mineActivity.getGridRowIndex(),mineActivity.getGridColumnndex());
 					mineFiled.displayGrid();
+					if(mindeSqure.isMined){
+						System.out.println("Oops! You stepped on a mine! Game over! ");
+						break;	
+						
+					}
 					if(mineFiled.checkForWin()){
 						System.out.println("Wow! You cleared the minefield! Game over!  ");
 						break;
@@ -66,9 +44,27 @@ public class MineSweeperMain {
 					}
 					
 				}
-				
+				else if(mineActivity.getActivity() == 'f'){
+					if(mineFiled.isOpened(mineActivity.getGridRowIndex(),mineActivity.getGridColumnndex())){
+						System.out.println("It is already opened... please select other to proceed ");
+						
+					}
+					else{
+						mineFiled.flag(mineActivity.getGridRowIndex(),mineActivity.getGridColumnndex());
+						mineFiled.displayGrid();
+						if(mineFiled.checkForWin()){
+							System.out.println("Wow! You cleared the minefield! Game over!  ");
+							break;
+							
+						}
+						
+					}
+					
+					
+				}
 				
 			}
+			
 			
 			//mineFiled.displayGrid();
 			
