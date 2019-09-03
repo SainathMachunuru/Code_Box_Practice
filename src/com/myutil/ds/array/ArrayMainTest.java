@@ -33,13 +33,17 @@ public class ArrayMainTest {
 		temp.add(5);
 		temp.add(6);
 		int arr[] = {8,1,7,2,3,4};
-		new ArrayCodeBox().findTwoMissingNumberInUnsortedArray(arr);
+		//new ArrayCodeBox().findTwoMissingNumberInUnsortedArray(arr);
 		//System.out.println(Arrays.toString(new ArrayCodeBox().rotateArray(arr, 2)));
 		//System.out.println(new ArrayCodeBox().searchInsert(temp,7));
 		
 		//new ArrayCodeBox().sortColors(temp);
 		//arr = new ArrayCodeBox().roatateMatrixBy90Degree(arr);
 		//System.out.println(Arrays.toString(arr));
+		new ArrayCodeBox().getAllZeroSumSubArray(new int[] {1,1,3,0,2,-5});
+		
+		
+		
 		
 
 	}

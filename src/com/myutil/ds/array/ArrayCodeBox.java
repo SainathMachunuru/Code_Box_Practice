@@ -193,6 +193,46 @@ public class ArrayCodeBox {
 		}
 		throw new IllegalArgumentException("No two sum solution");
 	}
+	public boolean isZeroSumSubArray(int arr[]) {
+		Map<Integer,Integer> map = new HashMap<>();
+		int sum = 0;
+		for(int i=0;i<arr.length;i++) {
+			sum+=arr[i];
+			if(sum == 0 || arr[i] == 0 || map.get(sum)!=null) {
+				return true;
+				
+			}
+			map.put(sum, i);
+			
+		}
+		return false;
+		
+	}
+	public void getAllZeroSumSubArray(int arr[]) {
+		Map<Integer,Integer> map = new HashMap<>();
+		int sum = 0;
+		for(int i=0;i<arr.length;i++) {
+			sum+=arr[i];
+			if(sum == 0) {
+				System.out.println(0+" "+i);
+				//return true;
+				
+			}
+			else if(arr[i] == 0 ) {
+				System.out.println(i+" "+i);
+				
+			}
+			else if(map.get(sum)!=null) {
+				int temp = map.get(sum)+1;
+				System.out.println(temp+" "+i);
+				
+			}
+			map.put(sum, i);
+			
+		}
+		//return false;
+		
+	}
 	
 
 }
