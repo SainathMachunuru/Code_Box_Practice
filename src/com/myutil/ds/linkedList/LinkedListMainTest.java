@@ -35,7 +35,7 @@ public class LinkedListMainTest {
 		//linkedList.reverseLinkedListUsingRecursion(l2,l2.head);
 		//l2.printLinkedList();
 		l2.head  = linkedList.swapPairs(l2.head);
-		l2.printLinkedList();
+		//l2.printLinkedList();
 		
 		//l2.printLinkedList();
 		
@@ -49,6 +49,16 @@ public class LinkedListMainTest {
 		l1.push(4);*/
 		
 		//new LinkedList().mergeTwoLists(l1.head, l2.head);
+		LinkedList list = new LinkedList();
+		list.head = new Node(50); 
+        list.head.next = new Node(20); 
+        list.head.next.next = new Node(15); 
+        list.head.next.next.next = new Node(4); 
+        list.head.next.next.next.next = new Node(10); 
+        //creating loop;
+        list.head.next.next.next.next.next = list.head.next.next; 
+        System.out.println(list.detectAndRemoveLoop(list.head));
+        list.printLinkedList();
 	}
 
 }

@@ -100,5 +100,19 @@ public class DoublyLinkedList {
 		System.out.println();
 
 	}
+	public DLNode reverseDoublyLinkedList(DLNode head) {
+		DLNode current = head,prev = null;
+		while(current!=null) {
+			DLNode temp = current.next;
+			current.next = prev;
+			current.prev = temp;
+			prev = current;
+			current = temp;
+			
+		}
+		head = prev;
+		return head;
+		
+	}
 
 }

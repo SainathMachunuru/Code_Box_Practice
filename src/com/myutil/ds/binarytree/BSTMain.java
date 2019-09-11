@@ -70,6 +70,18 @@ public class BSTMain {
 		System.out.println(bst.getInorderSuccessor(node, searchSuccessor).data);
 		System.out.println("**********************************************");
 		
+		//diameter of tree
+		Node root = new Node(1);
+		root.left = new Node(2);
+		root.right = new Node(3);
+		root.left.left = new Node(4);
+		root.left.right = new Node(5);
+		root.left.right.left = new Node(6);
+		root.left.right.left.right = new Node(7);
+		root.left.left.left = new Node(8);
+		System.out.println("Diameter of Tree: " + bst.Diameter(root)[1]);
+		
+		
 	}
 
 }

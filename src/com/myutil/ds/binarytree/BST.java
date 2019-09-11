@@ -249,4 +249,29 @@ public class BST {
 		}
 	}
 
+	public int[] Diameter(Node root) {
+		int DandH[] = { 0, 0 }; // initialize the height (DandH[0]) and diameter as 0 (DandH[1])
+		if (root != null) {
+
+			int[] leftResult = Diameter(root.left);
+			int[] rightResult = Diameter(root.right);
+
+			int height = Math.max(leftResult[0], rightResult[0]) + 1;
+			int leftDiameter = leftResult[1];
+			int rightDiameter = rightResult[1];
+			int rootDiameter = leftResult[0] + rightResult[0] + 1;
+			int finalDiameter = getMax(leftDiameter, rightDiameter, rootDiameter);
+			// prepare the DandH[]
+			DandH[0] = height; // update the height
+			DandH[1] = finalDiameter;
+			return DandH;
+		}
+
+		return DandH;
+	}
+
+	public int getMax(int a, int b, int c) {
+		return Math.max(a, Math.max(b, c));
+	}
+
 }

@@ -128,6 +128,43 @@ public class SortingUtil {
 		}
 
 	}
+	public void quickSort(int arr[],int start,int end) {
+		if(start<end) {
+			int partitionIndex = partition(arr,start,end);
+			quickSort(arr,start,partitionIndex-1);
+			quickSort(arr,partitionIndex+1,end);			
+		}
+		
+		//print(arr);
+	
+	}
+
+	private int partition(int[] arr, int start, int end) {
+		int pivot = arr[end];
+		int pivotIndex = start;
+		for(int i=start;i<end;i++) {
+			if(arr[i]<=pivot) {
+				//swap(arr,i,pivotIndex);
+				int temp = arr[i];
+				arr[i] = arr[pivotIndex];
+				arr[pivotIndex] = temp;
+				pivotIndex++;
+			}
+			
+		}
+		int temp = arr[pivotIndex];
+		arr[pivotIndex] = arr[end];
+		arr[end] = temp;
+		//swap(arr,pivotIndex,end);
+		return pivotIndex;
+	}
+
+	private void swap(int[] arr, int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+		
+	}
 
 	public void print(int arr[], int pass) {
 		System.out.print("pass " + (pass + 1) + ":: ");

@@ -218,5 +218,49 @@ public class LinkedList {
 	        }
 	        return head;
 	    }
+	 public int detectAndRemoveLoop(Node head) {
+		 Node fast = head,slow = head;
+		 while(slow!=null && fast!=null && fast.next!=null) {
+			 slow = slow.next;
+			 fast = fast.next.next;
+			 if(slow == fast) {
+				 removeLoop(slow,head);
+				 return 1;
+				 
+			 }
+			 
+		 }
+		 
+		 return 0;
+		 
+	 }
+
+	private void removeLoop(Node slow, Node head2) {
+		int k = 1;
+		Node ptr1 = slow;
+		while(ptr1.next!=slow) {
+			k++;
+			ptr1 = ptr1.next;
+			
+		}
+		ptr1 = head;
+		Node ptr2 = head;
+		for(int i=0;i<k;i++) {
+			ptr2 = ptr2.next;
+			
+		}
+		while(ptr1!=ptr2) {
+			ptr1 = ptr1.next;
+			ptr2 = ptr2.next;
+			
+		}
+		while(ptr2.next!=ptr1) {
+			ptr2 = ptr2.next;
+			
+		}
+		ptr2.next = null;
+
+		
+	}
 
 }
