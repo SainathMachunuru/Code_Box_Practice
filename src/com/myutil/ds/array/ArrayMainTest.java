@@ -32,15 +32,16 @@ public class ArrayMainTest {
 		temp.add(3);
 		temp.add(5);
 		temp.add(6);
-		int arr[] = {8,1,7,2,3,4};
+		//int arr[] = {8,1,7,2,3,4};
 		//new ArrayCodeBox().findTwoMissingNumberInUnsortedArray(arr);
 		//System.out.println(Arrays.toString(new ArrayCodeBox().rotateArray(arr, 2)));
 		//System.out.println(new ArrayCodeBox().searchInsert(temp,7));
 		
 		//new ArrayCodeBox().sortColors(temp);
-		//arr = new ArrayCodeBox().roatateMatrixBy90Degree(arr);
+		int arr[][]= {{1,2,3,0},{4,5,6,0},{7,8,9,0},{10,11,12,0}};
+		arr = new ArrayCodeBox().roatateMatrixBy90DegreeAntiClockWise(arr);
 		//System.out.println(Arrays.toString(arr));
-		new ArrayCodeBox().getAllZeroSumSubArray(new int[] {1,1,3,0,2,-5});
+		//new ArrayCodeBox().getAllZeroSumSubArray(new int[] {1,1,3,0,2,-5});
 		
 		
 		

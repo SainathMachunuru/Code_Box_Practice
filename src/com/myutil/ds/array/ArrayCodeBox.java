@@ -60,7 +60,7 @@ public class ArrayCodeBox {
 	}
 	public int[][] roatateMatrixBy90Degree(int[][] arr){
 		for(int i=0;i<arr.length;i++) {
-			for(int j=0;j<arr.length;j++) {
+			for(int j=i;j<arr.length;j++) {
 				arr = swapPositins(arr,i,j);
 			}
 		}
@@ -72,17 +72,38 @@ public class ArrayCodeBox {
 		}
 		return arr;
 	}
-
-	private int[][] swapPositins(int arr[][],int i, int j) {
-		int temp = arr[i][j];
-		arr[i][j]=arr[j][i];
-		arr[j][i]=temp;
-		if(i==0 && j==2) {
-			System.out.println(arr[i][j]+" "+arr[j][i]);
+	public int[][] roatateMatrixBy90DegreeAntiClockWise(int[][] arr){
+		//swaping columns and rows
+		for(int i=0;i<arr.length;i++) {
+			for(int j=i;j<arr.length;j++) {
+				arr = swapPositins(arr,i,j);
+			}
 		}
-		
+		//reversing each column
+		for(int i=0;i<arr[0].length;i++) {
+			for(int j=0,k=arr[0].length-1;j<k;j++,k--) {
+				int temp = arr[j][i];
+				arr[j][i] = arr[k][i];
+				arr[k][i] = temp;
+			}
+		}
+		//printing elements
+		for(int i=0;i<arr.length;i++) {
+			for(int j=0;j<arr.length;j++) {
+				System.out.print(arr[i][j]);
+			}
+			System.out.println();
+		}
 		return arr;
-		
+	}
+
+	private int[][] swapPositins(int arr[][], int i, int j) {
+		int temp = arr[i][j];
+		arr[i][j] = arr[j][i];
+		arr[j][i] = temp;
+
+		return arr;
+
 	}
 	//two pointers
 	public void sortColors(ArrayList<Integer> a) {
